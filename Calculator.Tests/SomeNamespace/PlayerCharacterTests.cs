@@ -3,12 +3,23 @@ using System;
 using System.Diagnostics;
 using System.IO;
 
-namespace Calculator.Tests {
+namespace Calculator.Tests.SomeNamespace{
 
     [TestFixture]
     internal class PlayerCharacterTests {
-        private PlayerCharacter sut_PC = new PlayerCharacter();
+        private PlayerCharacter sut_PC;
         private EnemyFactory sut_EF = new EnemyFactory();
+
+        [SetUp]
+        public void BeforeEachTest() {
+            Console.WriteLine("Before {0}", TestContext.CurrentContext.Test.Name);
+            sut_PC = new PlayerCharacter();
+        }
+
+        //[TearDown]
+        //public void AfterEashTest() {
+        //    Console.WriteLine("After {0}", TestContext.CurrentContext.Test.Name);
+        //}
 
         #region Nulls and Booleans
         [Test]
@@ -122,26 +133,17 @@ namespace Calculator.Tests {
         #endregion
 
         #region Running Code Before and After a Fixture
-        [SetUp]
-        public void BeforeEachTest() {
-            Console.WriteLine("Before {0}", TestContext.CurrentContext.Test.Name);
-            sut_PC = new PlayerCharacter();
-        }
 
-        [TearDown]
-        public void AfterEashTest() {
-            Console.WriteLine("After {0}", TestContext.CurrentContext.Test.Name);
-        }
 
         #region Fixtures
-        [OneTimeSetUp]
-        public void BeforeAnyTests() {
-            Console.WriteLine("*** Before PlayerCharacterTests");
-        }
-        [OneTimeTearDown]
-        public void AfterAnyTests() {
-            Console.WriteLine("*** After PlayerCharacterTests");
-        }
+        //[OneTimeSetUp]
+        //public void BeforeAnyTests() {
+        //    Console.WriteLine("*** Before PlayerCharacterTests");
+        //}
+        //[OneTimeTearDown]
+        //public void AfterAnyTests() {
+        //    Console.WriteLine("*** After PlayerCharacterTests");
+        //}
         #endregion
 
         #endregion

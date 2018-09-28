@@ -47,11 +47,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClassWithBugsTests.cs" />
+    <Compile Include="MemoryCalculatorCombinatorialTests.cs" />
+    <Compile Include="MemoryCalculatorTests.cs" />
+    <Compile Include="MemoryClaculatorDataDrivenTests.cs" />
     <Compile Include="NameJoinerTests.cs" />
     <Compile Include="PlayerCharacterTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SharingTestDataTests.cs" />
     <Compile Include="SimpleCalculatorTests.cs" />
     <Compile Include="SpecialDateStoreTest.cs" />
+    <Compile Include="StockMarketProjectionTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Calculator\Calculator.csproj">
